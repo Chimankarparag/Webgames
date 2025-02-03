@@ -21,6 +21,12 @@ body{
     border-radius:10px;
 
 }
+
+.wrapper .input-field{
+    z-index: -999;
+    opacity :0;
+    position : absolute;
+}
 .wrapper .content-box{
     padding:13px 20px 0px;
     border-radius: 10px;
@@ -41,6 +47,37 @@ body{
     word-break:break-all;
 
 }
+.typing-text p span{
+    position: relative;
+}
+.typing-text p span.correct{
+    color: rgb(52, 197, 52);
+}
+.typing-text p span.incorrect{
+    color: red ;
+    background: pink ;
+    outline : 1px solid white;
+    border-radius: 4px;
+}
+.typing-text p span.active{
+    color:rgb(44, 172, 172)
+}
+.typing-text p span.active::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height :2px;
+    width: 100%;
+    background:rgb(82, 175, 199);
+    animation: blink 1s ease-in-out infinite;
+}
+@keyframes blink{
+    50%{
+        opacity: 1;
+    }
+}
+
 .content-box .content{
     display:flex;
     margin-top: 17px;
